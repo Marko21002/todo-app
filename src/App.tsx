@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const [newTask, setNewTask] = useState("");
+  const [todos, setTodos] = useState<string[]>([]);
+  const [newTask, setNewTask] = useState<string>("");
 
   const addTask = () => {
     if (newTask.trim() !== "") {
@@ -11,7 +11,7 @@ function App() {
     }
   };
 
-  const removeTodo = (index) => {
+  const removeTodo = (index: number) => {
     const array = [...todos];
     array.splice(index, 1);
     setTodos(array);
